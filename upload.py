@@ -9,6 +9,8 @@ import mplfinance as mpf
 from datetime import datetime
 import ccxt
 import plotly.graph_objects as go
+import os
+os.environ['YFINANCE_CACHE_DIR'] = '/dev/null'  # Schakel caching volledig uit
 
 
 # Functie voor het berekenen van technische indicatoren
