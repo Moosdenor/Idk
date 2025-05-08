@@ -4,11 +4,18 @@ from finvizfinance.insider import Insider
 from finvizfinance.news import News
 import pandas as pd
 import yfinance as yf
+import os
+
+# Custom cache directory instellen voor yfinance
+os.environ["YFINANCE_CACHE"] = "/tmp/yfinance_cache"
+if not os.path.exists("/tmp/yfinance_cache"):
+    os.makedirs("/tmp/yfinance_cache")
+
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import mplfinance as mpf
 from datetime import datetime
 import ccxt
-import plotly.graph_objects as go  # Importeer Plotly
+import plotly.graph_objects as go
 
 
 # Functie voor het berekenen van technische indicatoren
