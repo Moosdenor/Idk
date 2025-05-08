@@ -11,6 +11,12 @@ os.environ["YFINANCE_CACHE"] = "/tmp/yfinance_cache"
 if not os.path.exists("/tmp/yfinance_cache"):
     os.makedirs("/tmp/yfinance_cache")
 
+# ⬇️ Voeg deze regel toe voor de database ⬇️
+os.environ["YFINANCE_DATABASE_DIR"] = "/tmp/yfinance_database"
+if not os.path.exists("/tmp/yfinance_database"):
+    os.makedirs("/tmp/yfinance_database")
+
+
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import mplfinance as mpf
 from datetime import datetime
