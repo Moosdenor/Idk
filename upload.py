@@ -4,25 +4,11 @@ from finvizfinance.insider import Insider
 from finvizfinance.news import News
 import pandas as pd
 import yfinance as yf
-import os
-
-# Custom cache directory instellen voor yfinance
-os.environ["YFINANCE_CACHE"] = "/tmp/yfinance_cache"
-os.environ["YFINANCE_DATABASE_DIR"] = "/tmp/yfinance_database"
-os.environ["PYTHON_EGG_CACHE"] = "/tmp/.cache"
-
-# Maak de directories als ze niet bestaan
-for path in ["/tmp/yfinance_cache", "/tmp/yfinance_database", "/tmp/.cache"]:
-    if not os.path.exists(path):
-        os.makedirs(path)
-
-
-
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import mplfinance as mpf
 from datetime import datetime
 import ccxt
-import plotly.graph_objects as go
+import plotly.graph_objects as go  # Importeer Plotly
 
 
 # Functie voor het berekenen van technische indicatoren
@@ -327,3 +313,4 @@ for ticker in st.session_state.watchlist:
             st.write("Geen historische gegevens beschikbaar voor technische analyse.")
     except Exception as e:
         st.error(f"Fout bij het ophalen van ticker info: {e}")
+
