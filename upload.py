@@ -8,13 +8,14 @@ import os
 
 # Custom cache directory instellen voor yfinance
 os.environ["YFINANCE_CACHE"] = "/tmp/yfinance_cache"
-if not os.path.exists("/tmp/yfinance_cache"):
-    os.makedirs("/tmp/yfinance_cache")
-
-# ⬇️ Voeg deze regel toe voor de database ⬇️
 os.environ["YFINANCE_DATABASE_DIR"] = "/tmp/yfinance_database"
-if not os.path.exists("/tmp/yfinance_database"):
-    os.makedirs("/tmp/yfinance_database")
+os.environ["PYTHON_EGG_CACHE"] = "/tmp/.cache"
+
+# Maak de directories als ze niet bestaan
+for path in ["/tmp/yfinance_cache", "/tmp/yfinance_database", "/tmp/.cache"]:
+    if not os.path.exists(path):
+        os.makedirs(path)
+
 
 
 from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
