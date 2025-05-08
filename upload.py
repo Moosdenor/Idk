@@ -8,7 +8,7 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 import mplfinance as mpf
 from datetime import datetime
 import ccxt
-import plotly.graph_objects as go  # Importeer Plotly
+import plotly.graph_objects as go
 
 
 # Functie voor het berekenen van technische indicatoren
